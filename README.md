@@ -1,64 +1,163 @@
-🛒 Ecommerce Playwright POM Framework
+🛒 E-Commerce Playwright POM Framework
+📌 Overview
 
-A scalable UI automation framework built with Playwright (JavaScript) using the Page Object Model (POM) design pattern to automate core e-commerce workflows.
+This project is a Playwright-based end-to-end automation framework built using the Page Object Model (POM) design pattern.
 
-This project demonstrates clean architecture, reusable page objects, and cross-browser automation aligned with industry best practices.
+It automates key user flows of an e-commerce application including:
 
-🚀 Tech Stack
+User Login
+
+Add to Cart
+
+Complete Purchase
+
+Affiliate Registration
+
+Order Confirmation Validation
+
+The project is integrated with GitHub and executed through Jenkins CI.
+
+🧰 Tech Stack
 
 Playwright
 
 JavaScript (Node.js)
 
-Playwright Test Runner
-
 Page Object Model (POM)
 
-🏗 Framework Design
+Git & GitHub
 
-Clear separation of test logic and page interactions
+Jenkins (CI Integration)
 
-Centralized locators for easier maintenance
+📂 Project Structure
+ecommerce-playwright-pom-framework/
+│
+├── pages/              # Page Object classes
+├── tests/              # Test specifications
+├── playwright.config.js
+├── package.json
+└── README.md
+📄 Pages Folder
 
-Reusable utility modules
+Contains reusable page classes:
 
-Cross-browser support (Chromium, Firefox, WebKit)
+HomePage
 
-Built-in Playwright auto-waiting for stable execution
+LoginPage
 
-📁 Project Structure
-pages/        → Page Object classes  
-tests/        → Test specifications  
-utils/        → Shared utilities  
-playwright.config.js  
-🧪 Test Coverage
+ProductPage
 
-Automated user journeys include:
+CheckoutPage
 
-Login (positive & negative)
+AffiliatePage
 
-Product selection
+AccountPage
 
-Add to cart
+Each page encapsulates:
 
-Cart validation
+Locators
 
-Checkout flow validation
+Actions
 
-▶️ Running Tests
+Assertion helper methods (where applicable)
+🧪 Test Strategy
+
+This framework follows the Page Object Model (POM) pattern:
+
+Page classes contain:
+
+UI locators
+
+Reusable action methods
+
+UI assertion helpers
+
+Test files contain:
+
+Test logic
+
+Test data
+
+Expected results
+
+This separation improves:
+
+Maintainability
+
+Reusability
+
+Readability
+
+Scalability
+
+▶️ Running Tests Locally
+Install Dependencies
 npm install
-npx playwright install
+Run All Tests
 npx playwright test
+Run Specific Test
+npx playwright test tests/TC04_CompletePurchase.spec.js
+Run in Headed Mode
+npx playwright test --headed
+🏷️ Tagged Test Execution
 
-View HTML report:
+The framework supports running tests by tags:
 
-npx playwright show-report
-🎯 Purpose
+npm run regression
+npm run sanity
+npm run datadriven
 
-This framework highlights:
+(Ensure test cases include appropriate tags.)
 
-Strong automation architecture using POM
+🔁 Continuous Integration (CI)
 
-Maintainable and scalable test design
+This project is integrated with Jenkins:
 
-Practical implementation of modern UI automation practices
+Source Code Management: GitHub
+
+Build Trigger: Manual / SCM Polling
+
+Execution: Playwright CLI via Jenkins job
+
+Result Reporting: Console Output & Playwright Reports
+
+🎯 Key Features
+
+Modular Page Object Design
+
+Parameterized methods (e.g., login, form submission)
+
+Dynamic date handling
+
+CI/CD integration
+
+Structured test organization
+
+📚 Learning Objectives
+
+This project was developed as part of structured automation training to:
+
+Strengthen understanding of POM architecture
+
+Practice refactoring tests into reusable page methods
+
+Integrate Playwright with Jenkins
+
+Improve debugging and CI troubleshooting skills
+
+🚀 Future Improvements
+
+Environment-based configuration (dev/stage/prod)
+
+Test data externalization
+
+.env credential handling
+
+Parallel test optimization
+
+Enhanced reporting integration
+
+👨‍💻 Author
+
+QA Automation Engineer transitioning from manual to automation testing.
+Focused on building maintainable automation frameworks and CI-integrated test pipelines.
